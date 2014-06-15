@@ -10,8 +10,14 @@
             text-align: center;
             border-collapse: collapse;
         }
+        table tbody:nth-child(even) {
+            background-color: #eee;
+        }
         th, td {
             padding:8px 20px;
+        }
+        tfoot tr {
+            background-color: lavender;
         }
         .red {
             color: red;
@@ -35,6 +41,7 @@
 <body>
 <h1>Hello 饭局</h1>
 <table>
+    <thead>
     <tr>
         <th>球队</th>
         <th>时间</th>
@@ -43,6 +50,9 @@
         <th>女包</th>
         <th>柯柯</th>
     </tr>
+    </thead>
+
+    <tbody>
     <tr>
         <th>巴西 vs 克罗地亚</th>
         <td>6/13 04：00</td>
@@ -51,8 +61,9 @@
         <td>3:1<span>3</span></td>
         <td>2:0<span>1</span></td>
     </tr>
+    </tbody>
 
-
+    <tbody>
     <tr>
         <th>墨西哥 vs 喀麦隆</th>
         <td>6/14 00：00</td>
@@ -77,8 +88,9 @@
         <td>1:2<span>0</span></td>
         <td>1:1<span>0</span></td>
     </tr>
+    </tbody>
 
-
+    <tbody>
     <tr>
         <th>哥伦比亚 vs 希腊</th>
         <td>6/15 00：00</td>
@@ -111,8 +123,9 @@
         <td>1:2<span>0</span></td>
         <td>0:1<span>0</span></td>
     </tr>
+    </tbody>
 
-
+    <tbody>
     <tr>
         <th>瑞士 vs 厄瓜多尔</th>
         <td>6/16 00：00</td>
@@ -137,6 +150,29 @@
         <td>3:0</td>
         <td>4:1</td>
     </tr>
+
+    <tfoot>
+        <th>当前得分</th>
+        <th>-</th>
+        <th>-</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tfoot>
+    </tbody>
 </table>
+
+<script type="text/javascript" src="http://img3.cache.netease.com/apps/galaxy/js/lib/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    !function ($) {
+        for ( var i = 4; i < 7; i++ ) {
+            var num = 0;
+            $('tbody tr td:nth-child(' + i + ') span').each(function() {
+                num += parseInt($(this).text());
+            });
+            $('tfoot th:nth-child(' + i + ')').text(num);
+        }
+    }(jQuery);
+</script>
 </body>
 </html>
