@@ -2,26 +2,22 @@
 layout: default
 ---
 
-{% assign minutes = content | number_of_words | divided_by: 180 %}
-{% if minutes == 0 %}
-{% assign minutes = 1 %}
-{% endif %}
-
 <div class="post-header mb2">
   {% if page.hide_title %}
 	<!-- title is hide -->
   {% else %}
-  <h1 class="py2">{{ page.title }}</h1>
+  <h1 class="py1">{{ page.title }}</h1>
   {% endif %}
   <span class="post-meta">{{ page.date | date: "%m月 %d日, %Y" }}</span><br>
   {% if page.update_date %}
     <span class="post-meta">Updated: {{ page.update_date | date: "%m月 %d日, %Y" }}</span><br>
   {% endif %}
-  <span class="post-meta small">{{ minutes }} minute read</span>
+  <!-- <span class="post-meta small">{{ minutes }} minute read</span> -->
 </div>
 
 <article class="post-content">
   {{ content }}
+  <h5>#原文地址：<a href="{{ site.url }}{{ page.url }}">《{{ page.title }}》</a> By <a href="{{ site.url }}">{{ site.author }}</a></h5>
 </article>
 
 {% if site.show_post_footers %}

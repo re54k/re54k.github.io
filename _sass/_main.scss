@@ -214,20 +214,38 @@ abbr {
   cursor: help;
 }
 
+hr {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 pre, code {
   font-family: Menlo, Monaco, "Courier New", monospace
 }
 
 code {
-  color: #7a7a7a;
+  padding: 3px 7px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  white-space: nowrap;
+  border-radius: 4px;
 }
 
 pre {
   padding: 1.125em;
-  font-size: 1.125rem;
-  line-height: 1.11;
+  font-size: 1rem;
+  line-height: 1.4;
   overflow-x: scroll;
   margin-bottom: 0.88em;
+  code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+  }
 }
 
 .highlight .p {
@@ -236,9 +254,12 @@ pre {
 }
 
 blockquote {
-  padding: 1.33em;
+  padding: .6em 1.33em;
   font-style: italic;
   border-left: 5px solid #7a7a7a;
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 blockquote footer {

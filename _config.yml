@@ -1,10 +1,10 @@
 # Site settings
 title:       Lok'tar Ogar
 email:       ponyowa@163.com
-author:      Herk Lee
-description: "简单的前端博客"
+author:      艾佢K
+description: "简单的前端博客、前端开发、移动开发、HTML5、Javascript、CSS"
 baseurl:     ""
-url:         "http://re54k.github.io"
+url:         "http://www.meow.re"
 
 #Duoshuo short Name / 多说的shortname
 duoshuo: 	re54k
@@ -31,7 +31,7 @@ paypal_url:
 flattr_button:
 
 # Build settings
-markdown:     kramdown
+markdown:     redcarpet
 permalink:    pretty
 paginate:     8
 sass:
